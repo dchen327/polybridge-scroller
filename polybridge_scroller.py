@@ -68,7 +68,7 @@ def search_for_joints(img):
 def find_joints_above(num_moves):
     """ Keeps moving screen up until it finds a yellow joint, then it stops. Returns number of moves required. """
     for move in range(num_moves):
-        move_screen_up()
+        move_screen_up(1)
         img = take_screenshot()
         if search_for_joints(img):
             return move
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     alt_tab()
     sleep(1)
 
-    move_screen_up(5)
-    # move_screen_down()
+    move_screen_up(3)
+    # move_screen_down(5)
 
     print(find_joints_above(300))  # swipe up 300 times max, print out number of swipes required
