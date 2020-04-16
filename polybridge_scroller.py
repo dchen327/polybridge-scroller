@@ -1,6 +1,13 @@
 """
 A simple Python program for quickly dragging the screen up/down and searching for building pieces in a blank grid.
 
+The program has three main functions: move_screen_up(), move_screen_down(), and find_joints_above(). 
+Each one of these functions takes in a parameter num_moves, which specifies how many times to move.
+These functions preserve the horizontal location of the mouse, which makes it easier to line up road drops.
+
+Ex) move_screen_up(20) -> moves the screen up 20 times
+Ex) find_joints_above(300) -> moves screen up a maximum of 300 times, stops when it finds a yellow joint
+
 Author: David Chen
 """
 
