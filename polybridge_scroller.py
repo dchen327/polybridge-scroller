@@ -22,18 +22,20 @@ def alt_tab():
     pyautogui.keyUp('alt')
 
 
-def move_screen_up():
+def move_screen_up(num_moves):
     """ Drags downward to move the screen upward """
     pos_x = pyautogui.position()[0]
-    pyautogui.moveTo(pos_x, 100)
-    pyautogui.drag(0, 800, duration=0.2)
+    for _ in range(num_moves):
+        pyautogui.moveTo(pos_x, 100)
+        pyautogui.drag(0, 800, duration=0.2)
 
 
-def move_screen_down():
+def move_screen_down(num_moves):
     """ Drags upward to move the screen downard """
     pos_x = pyautogui.position()[0]
-    pyautogui.moveTo(pos_x, 900)
-    pyautogui.drag(0, -800, duration=0.2)
+    for _ in range(num_moves):
+        pyautogui.moveTo(pos_x, 900)
+        pyautogui.drag(0, -800, duration=0.2)
 
 
 def take_screenshot():
@@ -77,8 +79,7 @@ if __name__ == '__main__':
     alt_tab()
     sleep(1)
 
-    for _ in range(20):  # moves up/down this many times
-        move_screen_up()
-        # move_screen_down()
+    move_screen_up(5)
+    # move_screen_down()
 
     print(find_joints_above(300))  # swipe up 300 times max, print out number of swipes required
